@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>StakingForge â€” Next-Gen Financial Infrastructure</title>
+<title>StakingForge — Next-Gen Financial Infrastructure</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 @font-face{font-family:BioSans;font-weight:400;src:url("./stakingforge-live-assets/fonts/biosans-regular.otf") format("opentype");font-display:swap;}
@@ -98,7 +98,7 @@ body.light-theme .hero-cta{color:#171225;}
 .hero-cta:hover{border-color:var(--accent);background:rgba(124,90,255,0.1);}
 .hero-cta svg{width:13px;height:13px;stroke:#b490ff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
 
-/* HERO RIGHT â€” chart + blocks */
+/* HERO RIGHT — chart + blocks */
 .hero-visual{position:absolute;right:-54px;top:62px;width:88%;height:760px;pointer-events:none;background:url("./stakingforge-live-assets/hero-graphics-desktop-dark.svg") center/contain no-repeat;}
 body.light-theme .hero-visual{background-image:url("./stakingforge-live-assets/hero-graphics.svg");}
 .chart-svg{position:absolute;bottom:0;right:0;width:100%;height:100%;}
@@ -427,6 +427,52 @@ body.light-theme .dat-page-list li,body.light-theme .dat-detail-card p,body.ligh
 body.light-theme .dat-detail-section{background:#fff;}
 body.light-theme .dat-detail-section.alt{background:#f6f3fb;}
 @media(max-width:900px){.dat-page-hero{grid-template-columns:1fr;padding:120px 24px 70px;}.dat-detail-section,.dat-final-cta{padding:70px 24px;}.dat-detail-grid,.dat-process,.dat-deliverables{grid-template-columns:1fr;}.dat-final-inner{flex-direction:column;align-items:flex-start;}.dat-page-hero h1{font-size:44px;}}
+
+/* ADVISORY SERVICE PAGE */
+.stable-page-hero{position:relative;z-index:1;min-height:720px;padding:170px 84px 80px;display:grid;grid-template-columns:minmax(0,0.98fr) minmax(360px,0.72fr);gap:54px;align-items:center;overflow:hidden;}
+.stable-page-hero::before{content:"";position:absolute;right:-260px;top:40px;width:680px;height:680px;background:radial-gradient(circle,rgba(0,212,170,0.18),transparent 68%);pointer-events:none;}
+.stable-page-hero::after{content:"";position:absolute;left:-260px;bottom:-260px;width:620px;height:620px;background:radial-gradient(circle,rgba(122,60,255,0.14),transparent 68%);pointer-events:none;}
+.stable-page-content{position:relative;z-index:2;max-width:860px;}
+.stable-page-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#00d4aa;font-weight:900;margin-bottom:22px;}
+.stable-page-hero h1{font-family:Termina,sans-serif;font-size:clamp(48px,4.7vw,72px);font-weight:700;line-height:1.04;letter-spacing:0;color:#f4f2ff;margin-bottom:28px;}
+.stable-page-hero p{font-size:21px;line-height:1.52;color:rgba(255,255,255,0.9);font-weight:800;max-width:760px;margin-bottom:38px;}
+.stable-hero-card{position:relative;z-index:2;border:1px solid rgba(255,255,255,0.12);border-radius:28px;padding:30px;background:linear-gradient(180deg,rgba(18,17,42,0.94),rgba(9,8,24,0.92));box-shadow:0 30px 90px rgba(0,0,0,0.26);}
+.stable-hero-card h2{font-size:18px;font-weight:900;margin-bottom:18px;color:var(--text);}
+.stable-hero-list{display:grid;gap:14px;}
+.stable-hero-list li{list-style:none;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;color:var(--muted);font-size:14px;line-height:1.55;font-weight:700;}
+.stable-hero-list li::before{content:attr(data-step);width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,170,0.12);color:#00d4aa;font-size:12px;font-weight:900;}
+.stable-section{position:relative;z-index:1;padding:92px 84px;background:var(--bg2);}
+.stable-section.alt{background:var(--bg);}
+.stable-wrap{max-width:1180px;margin:0 auto;}
+.stable-head{max-width:780px;margin-bottom:30px;}
+.stable-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.stable-card{border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:24px;background:rgba(255,255,255,0.045);min-height:260px;}
+.stable-icon{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,rgba(0,212,170,0.24),rgba(122,60,255,0.18));color:#fff;font-size:13px;font-weight:900;}
+.stable-card h3{font-size:21px;font-weight:900;color:var(--text);margin-bottom:12px;}
+.stable-card p{font-size:15px;line-height:1.68;color:var(--muted);font-weight:700;}
+.stable-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stable-flow-step{border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:22px;background:rgba(255,255,255,0.045);}
+.stable-flow-step span{display:flex;width:42px;height:42px;border-radius:14px;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,rgba(0,212,170,0.24),rgba(122,60,255,0.18));color:#fff;font-weight:900;}
+.stable-flow-step h3{font-size:18px;font-weight:900;margin-bottom:8px;color:var(--text);}
+.stable-flow-step p{font-size:14px;line-height:1.6;color:var(--muted);font-weight:700;}
+.stable-risk{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stable-risk-box{border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:28px;background:rgba(255,255,255,0.045);}
+.stable-risk-box h3{font-size:22px;font-weight:900;margin-bottom:14px;color:var(--text);}
+.stable-risk-box ul{display:grid;gap:12px;}
+.stable-risk-box li{list-style:none;color:var(--muted);font-size:15px;line-height:1.55;font-weight:800;position:relative;padding-left:24px;}
+.stable-risk-box li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:#00d4aa;box-shadow:0 0 18px rgba(0,212,170,0.55);}
+.stable-final-cta{position:relative;z-index:1;padding:92px 84px;background:linear-gradient(90deg,rgba(0,212,170,0.12),rgba(122,60,255,0.1));}
+.stable-final-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:26px;align-items:center;}
+.stable-final-inner p{font-size:17px;line-height:1.58;color:var(--muted);font-weight:800;max-width:650px;}
+.stable-final-inner .hero-cta{text-decoration:none;white-space:nowrap;}
+body.light-theme .stable-page-hero h1{color:#171225;}
+body.light-theme .stable-page-hero p{color:rgba(23,18,37,0.84);}
+body.light-theme .stable-hero-card,body.light-theme .stable-card,body.light-theme .stable-flow-step,body.light-theme .stable-risk-box{background:#fff;border-color:rgba(61,45,96,0.1);box-shadow:0 18px 50px rgba(61,45,96,0.08);}
+body.light-theme .stable-hero-card h2,body.light-theme .stable-card h3,body.light-theme .stable-flow-step h3,body.light-theme .stable-risk-box h3{color:#171225;}
+body.light-theme .stable-hero-list li,body.light-theme .stable-card p,body.light-theme .stable-flow-step p,body.light-theme .stable-risk-box li,body.light-theme .stable-final-inner p{color:rgba(23,18,37,0.68);}
+body.light-theme .stable-section{background:#fff;}
+body.light-theme .stable-section.alt{background:#f6f3fb;}
+@media(max-width:900px){.stable-page-hero{grid-template-columns:1fr;padding:120px 24px 70px;}.stable-section,.stable-final-cta{padding:70px 24px;}.stable-grid,.stable-flow,.stable-risk{grid-template-columns:1fr;}.stable-final-inner{flex-direction:column;align-items:flex-start;}.stable-page-hero h1{font-size:44px;}}
 </style>
 </head>
 <body>
@@ -476,96 +522,90 @@ body.light-theme .dat-detail-section.alt{background:#f6f3fb;}
   </div>
 </nav>
 
-<section class="dat-page-hero">
-  <div class="dat-page-content reveal">
-    <div class="dat-page-eyebrow">Digital Asset Treasury</div>
-    <h1>Make treasury capital productive without losing control.</h1>
-    <p>StakingForge helps businesses design digital asset treasury systems that connect reserves, stablecoins, onchain yield, and reporting into one practical operating model.</p>
-    <a class="hero-cta" href="stakingforge.html#contact">Start Treasury Review &rarr;</a>
+<section class="stable-page-hero">
+  <div class="stable-page-content reveal">
+    <div class="stable-page-eyebrow">Advisory</div>
+    <h1>Bridge digital asset adoption with real-world business operations.</h1>
+    <p>StakingForge helps businesses plan, understand, and implement digital asset strategies with practical infrastructure, market intelligence, compliance awareness, and executive education.</p>
+    <a class="hero-cta" href="stakingforge.html#contact">Plan Advisory Session &rarr;</a>
   </div>
-  <aside class="dat-page-card reveal">
-    <h2>What this service helps you decide</h2>
-    <ul class="dat-page-list">
-      <li data-step="01">Which treasury reserves should remain liquid, and which can be deployed productively.</li>
-      <li data-step="02">How stablecoins can support payments, settlement, and working-capital movement.</li>
-      <li data-step="03">Where onchain yield fits, and where risk limits should stop deployment.</li>
-      <li data-step="04">What reporting, custody, and monitoring are needed before scaling.</li>
+  <aside class="stable-hero-card reveal">
+    <h2>What we help define</h2>
+    <ul class="stable-hero-list">
+      <li data-step="01">Which wallets, custody paths, rails, and operating workflows fit the business.</li>
+      <li data-step="02">How market data and onchain analytics should inform capital decisions.</li>
+      <li data-step="03">Where compliance, reporting, and internal controls need to be mapped early.</li>
+      <li data-step="04">How leadership and teams can build a clear digital asset roadmap.</li>
     </ul>
   </aside>
 </section>
 
-<section class="dat-detail-section">
-  <div class="dat-detail-wrap">
-    <div class="dat-detail-head reveal">
-      <div class="section-label">Service Detail</div>
-      <h2 class="section-h">From passive holdings to an active treasury framework.</h2>
-      <p class="section-p">A digital asset treasury should not be a loose collection of wallets. It needs policy, execution rules, risk controls, and clear reasons for every asset held or deployed.</p>
+<section class="stable-section">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
+      <div class="section-label">Service Offering</div>
+      <h2 class="section-h">Strategic guidance for digital asset adoption and capital optimization.</h2>
+      <p class="section-p">Advisory support turns broad digital asset interest into a concrete plan: what to use, how to implement it, what risks to control, and how teams should operate.</p>
     </div>
-    <div class="dat-detail-grid reveal">
-      <article class="dat-detail-card">
-        <h3>Treasury Policy Design</h3>
-        <p>We help define allocation ranges, liquidity buffers, reserve tiers, and decision rules so digital assets support the business instead of creating unmanaged exposure.</p>
-      </article>
-      <article class="dat-detail-card">
-        <h3>Stablecoin Workflows</h3>
-        <p>We map stablecoin use across payments, settlement, treasury mobility, and idle cash deployment while keeping controls, counterparties, and reporting in view.</p>
-      </article>
-      <article class="dat-detail-card">
-        <h3>Productive Capital Strategy</h3>
-        <p>We evaluate staking, structured onchain yield, and protocol opportunities by accessibility, liquidity, smart-contract risk, counterparty risk, and operational fit.</p>
-      </article>
-      <article class="dat-detail-card">
-        <h3>Risk and Reporting Layer</h3>
-        <p>We help create a simple reporting cadence for balances, yield, exposure, wallets, protocols, and treasury actions so stakeholders can understand what is happening.</p>
-      </article>
+    <div class="stable-grid reveal">
+      <article class="stable-card"><div class="stable-icon">01</div><h3>Onboarding & Infrastructure Setup</h3><p>Plan wallets, custody, access controls, payment rails, treasury workflows, and operational setup so digital assets can be used with confidence.</p></article>
+      <article class="stable-card"><div class="stable-icon">02</div><h3>Market Research & Data Analytics</h3><p>Translate macro trends, crypto market structure, onchain data, liquidity conditions, and sector research into clear decision support.</p></article>
+      <article class="stable-card"><div class="stable-icon">03</div><h3>Regulatory & Compliance Advisory</h3><p>Map policy requirements, documentation needs, reporting workflows, jurisdiction considerations, and control points with compliance-aware planning.</p></article>
+      <article class="stable-card"><div class="stable-icon">04</div><h3>Education & Strategy</h3><p>Equip leadership and teams with workshops, playbooks, adoption roadmaps, risk frameworks, and strategy sessions for long-term execution.</p></article>
     </div>
   </div>
 </section>
 
-<section class="dat-detail-section alt">
-  <div class="dat-detail-wrap">
-    <div class="dat-detail-head reveal">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-h">A practical path from review to execution.</h2>
+<section class="stable-section alt">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
+      <div class="section-label">Engagement Flow</div>
+      <h2 class="section-h">A practical path from strategy questions to execution.</h2>
     </div>
-    <div class="dat-process reveal">
-      <div class="dat-process-step"><span>01</span><h3>Assess</h3><p>Understand current cash flows, reserves, wallets, payment needs, and digital asset readiness.</p></div>
-      <div class="dat-process-step"><span>02</span><h3>Structure</h3><p>Design allocation buckets for liquidity, stablecoins, productive assets, and strategic exposure.</p></div>
-      <div class="dat-process-step"><span>03</span><h3>Deploy</h3><p>Introduce approved workflows for payments, custody, stablecoins, and yield with clear limits.</p></div>
-      <div class="dat-process-step"><span>04</span><h3>Monitor</h3><p>Track results, risk, balances, yield, and changes so the treasury can adapt over time.</p></div>
+    <div class="stable-flow reveal">
+      <div class="stable-flow-step"><span>01</span><h3>Discover</h3><p>Review business goals, current infrastructure, treasury needs, payment flows, risk appetite, and internal capabilities.</p></div>
+      <div class="stable-flow-step"><span>02</span><h3>Diagnose</h3><p>Identify gaps across operations, data, compliance awareness, custody, approvals, and capital allocation workflows.</p></div>
+      <div class="stable-flow-step"><span>03</span><h3>Design</h3><p>Build a focused roadmap covering infrastructure, analytics, policy, education, and execution priorities.</p></div>
+      <div class="stable-flow-step"><span>04</span><h3>Support</h3><p>Guide implementation with review sessions, decision support, documentation, and ongoing strategic feedback.</p></div>
     </div>
   </div>
 </section>
 
-<section class="dat-detail-section">
-  <div class="dat-detail-wrap">
-    <div class="dat-detail-head reveal">
+<section class="stable-section">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
       <div class="section-label">Deliverables</div>
-      <h2 class="section-h">What you walk away with.</h2>
+      <h2 class="section-h">Clear outputs your team can actually use.</h2>
     </div>
-    <div class="dat-deliverables reveal">
-      <ul>
-        <li>Digital asset treasury policy outline</li>
-        <li>Reserve and liquidity segmentation map</li>
-        <li>Stablecoin payment and settlement workflow</li>
-        <li>Onchain yield opportunity shortlist</li>
-      </ul>
-      <ul>
-        <li>Risk controls for custody, protocol, and liquidity exposure</li>
-        <li>Reporting framework for balances and performance</li>
-        <li>Implementation roadmap with staged priorities</li>
-        <li>Ongoing review cadence for treasury decisions</li>
-      </ul>
+    <div class="stable-risk reveal">
+      <div class="stable-risk-box">
+        <h3>Strategic outputs</h3>
+        <ul>
+          <li>Digital asset adoption roadmap</li>
+          <li>Infrastructure and vendor considerations</li>
+          <li>Market research briefs and data dashboards</li>
+          <li>Capital allocation and treasury decision frameworks</li>
+        </ul>
+      </div>
+      <div class="stable-risk-box">
+        <h3>Operational outputs</h3>
+        <ul>
+          <li>Wallet, custody, and approval workflow planning</li>
+          <li>Compliance-aware documentation checklist</li>
+          <li>Team education sessions and internal playbooks</li>
+          <li>Recurring review structure for decisions and risks</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="dat-final-cta">
-  <div class="dat-final-inner reveal">
+<section class="stable-final-cta">
+  <div class="stable-final-inner reveal">
     <div>
-      <div class="section-label">Ready to build?</div>
-      <h2 class="section-h">Start with a treasury review.</h2>
-      <p>Tell us how your business currently manages payments, reserves, and digital assets. We will help identify the highest-value starting point.</p>
+      <div class="section-label">Ready to build the roadmap?</div>
+      <h2 class="section-h">Turn digital asset questions into an operating plan.</h2>
+      <p>Tell us where your business is today: research, onboarding, infrastructure, compliance preparation, treasury strategy, or team education.</p>
     </div>
     <a class="hero-cta" href="stakingforge.html#contact">Contact Us &rarr;</a>
   </div>
@@ -614,7 +654,7 @@ body.light-theme .dat-detail-section.alt{background:#f6f3fb;}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>Â© 2025 StakingForge. All rights reserved.</p>
+    <p>© 2025 StakingForge. All rights reserved.</p>
     <div class="footer-links">
       <a href="#">Twitter / X</a>
       <a href="#">Discord</a>
