@@ -1278,7 +1278,7 @@ footer ul a:hover{color:#fff;}
           <option>Germany</option>
           <option>Other</option>
         </select>
-        <p class="checkout-card-note">Card details are collected only on the secure hosted checkout page. After payment, the membership platform grants Discord access automatically.</p>
+        <p class="checkout-card-note">Card details are collected only on Stripe's secure hosted checkout page. After payment, Discord access can be granted through your membership workflow.</p>
       </div>
 
       <div class="wallet-row"><span class="radio-dot"></span><span class="cash-icon">$</span><span>Cash App Pay</span></div>
@@ -1300,7 +1300,7 @@ footer ul a:hover{color:#fff;}
       </div>
       <p class="checkout-terms">By completing signup, I agree to the StakingForge terms and conditions and community rules. Membership access is handled by the secure payment provider and Discord integration.</p>
       <button class="join-now checkout-action" id="joinNowButton" type="button">Join now</button>
-      <div class="checkout-status" id="checkoutStatus">Connect your real LaunchPass, Whop, or Stripe payment link in the checkout settings before going live.</div>
+      <div class="checkout-status" id="checkoutStatus">Connect your live Stripe payment link before going live.</div>
       <div class="checkout-powered">Powered by secure hosted checkout</div>
     </div>
   </div>
@@ -1429,8 +1429,8 @@ const onboardName = document.getElementById('onboardName');
 const onboardEmail = document.getElementById('onboardEmail');
 
 const discordCheckout = {
-  monthlyUrl: 'https://www.launchpass.com/stakingforge/stakingforge-pro',
-  yearlyUrl: 'https://www.launchpass.com/stakingforge/stakingforge-pro',
+  monthlyUrl: 'https://buy.stripe.com/test_aFa8wPfooggHg7qckf8N200',
+  yearlyUrl: 'https://buy.stripe.com/test_aFa8wPfooggHg7qckf8N200',
   monthlyPrice: '$39.00',
   yearlyPrice: '$337.00',
   yearlySavings: '$131'
