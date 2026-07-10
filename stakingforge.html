@@ -259,6 +259,18 @@ body.light-theme .dat-cta{background:linear-gradient(90deg,rgba(122,60,255,0.08)
 .checkout-brand img{width:24px;height:24px;border-radius:7px;object-fit:cover;}
 .checkout-title{font-family:var(--pricing-sans,'DM Sans',sans-serif);font-size:24px;line-height:1.18;font-weight:800;letter-spacing:-.02em;color:#10111a;}
 .checkout-body{padding:22px 34px 28px;}
+.checkout-summary{border:1px solid #eaecf0;border-radius:18px;background:linear-gradient(180deg,#fff,#f8fafc);padding:20px;margin-bottom:16px;}
+.checkout-plan-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:12px;}
+.checkout-plan-name{font-size:16px;font-weight:900;color:#10111a;line-height:1.25;}
+.checkout-plan-note{font-size:13px;line-height:1.45;color:#667085;margin-top:5px;}
+.checkout-price{font-size:22px;font-weight:900;color:#10111a;white-space:nowrap;letter-spacing:-.02em;}
+.checkout-price span{display:block;font-size:12px;font-weight:800;color:#667085;text-align:right;letter-spacing:0;}
+.checkout-includes{display:grid;gap:9px;margin:16px 0 0;padding:0;list-style:none;}
+.checkout-includes li{display:flex;gap:9px;align-items:flex-start;color:#344054;font-size:13.5px;line-height:1.45;font-weight:700;}
+.checkout-includes svg{width:16px;height:16px;flex:0 0 auto;stroke:#00c9a7;stroke-width:3;fill:none;margin-top:1px;}
+.checkout-handoff{border:1px solid #d7e3ff;border-radius:16px;background:linear-gradient(135deg,rgba(91,140,255,.1),rgba(123,61,255,.08));padding:16px;margin:14px 0 16px;color:#344054;font-size:13.5px;line-height:1.55;font-weight:700;}
+.checkout-handoff strong{display:block;color:#10111a;font-size:14px;margin-bottom:4px;}
+.checkout-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
 .checkout-pay-label{text-align:center;font-size:13px;font-weight:800;color:#475467;margin-bottom:10px;}
 .gpay-btn{width:100%;min-height:48px;border-radius:12px;border:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:18px;font-weight:800;cursor:pointer;font-family:var(--pricing-sans,'DM Sans',sans-serif);}
 .gpay-mark{font-weight:900;letter-spacing:-.05em;}
@@ -523,6 +535,7 @@ footer ul a:hover{color:#fff;}
   .checkout-dialog{max-height:94vh;border-radius:18px;}
   .checkout-header,.checkout-body{padding-left:22px;padding-right:22px;}
   .checkout-card-grid{grid-template-columns:1fr;}
+  .checkout-input-grid{grid-template-columns:1fr;}
   .yearly-switch{align-items:flex-start;flex-wrap:wrap;}
   .footer-grid{grid-template-columns:1fr 1fr;}
   footer{padding:48px 24px 28px;}
@@ -1260,48 +1273,32 @@ footer ul a:hover{color:#fff;}
       <h2 class="checkout-title" id="checkoutTitle">VIP Membership</h2>
     </div>
     <div class="checkout-body">
-      <div class="checkout-pay-label">Pay with</div>
-      <button class="gpay-btn checkout-action" type="button"><span>Buy with</span> <span class="gpay-mark"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span> <span>Pay</span></button>
-      <div class="checkout-divider">or</div>
-
-      <div class="checkout-method">
-        <div class="checkout-method-head"><span class="radio-dot"></span><span class="card-icon"></span><span>Card</span></div>
-        <input class="checkout-input" type="text" value="Secure card checkout opens next" readonly>
-        <div class="checkout-card-grid">
-          <input class="checkout-input" type="text" value="MM / YY" readonly>
-          <input class="checkout-input" type="text" value="CVC" readonly>
+      <div class="checkout-summary">
+        <div class="checkout-plan-row">
+          <div>
+            <div class="checkout-plan-name">StakingForge Discord</div>
+            <div class="checkout-plan-note">Market intelligence and private trader community access.</div>
+          </div>
+          <div class="checkout-price" id="checkoutTotal">$39.00<span>per month</span></div>
         </div>
-        <select class="checkout-select" aria-label="Country">
-          <option>Slovenia</option>
-          <option>United States</option>
-          <option>United Kingdom</option>
-          <option>Germany</option>
-          <option>Other</option>
-        </select>
-        <p class="checkout-card-note">Card details are collected only on Stripe's secure hosted checkout page. After payment, Discord access can be granted through your membership workflow.</p>
+        <ul class="checkout-includes">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Daily market updates and technical trade frameworks</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Onchain research and liquidity positioning analysis</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Private Discord channels for paid members</li>
+        </ul>
       </div>
-
-      <div class="wallet-row"><span class="radio-dot"></span><span class="cash-icon">$</span><span>Cash App Pay</span></div>
-      <input class="checkout-input" id="checkoutName" type="text" placeholder="Name">
-      <input class="checkout-input" id="checkoutEmail" type="email" placeholder="Enter email">
-      <div class="coupon-row">
-        <input class="checkout-input" id="checkoutCoupon" type="text" placeholder="Enter Promo/Coupon Code">
-        <button type="button">Apply</button>
+      <div class="checkout-handoff">
+        <strong>Secure payment opens on Stripe.</strong>
+        Card details, Link, Apple Pay, and other available payment methods are handled on Stripe's hosted checkout page.
       </div>
-
-      <div class="checkout-total">
-        <span>Total due today:</span>
-        <strong id="checkoutTotal">$39.00</strong>
+      <div class="checkout-input-grid">
+        <input class="checkout-input" id="checkoutName" type="text" placeholder="Name">
+        <input class="checkout-input" id="checkoutEmail" type="email" placeholder="Email">
       </div>
-      <div class="yearly-switch">
-        <span id="yearlyLabel">Switch to yearly and Save $131</span>
-        <span class="deal-pill">Best Deal</span>
-        <button class="switch-shell" type="button" id="planSwitch" aria-label="Switch billing plan"><span class="switch-dot"></span></button>
-      </div>
-      <p class="checkout-terms">By completing signup, I agree to the StakingForge terms and conditions and community rules. Membership access is handled by the secure payment provider and Discord integration.</p>
-      <button class="join-now checkout-action" id="joinNowButton" type="button">Join now</button>
+      <p class="checkout-terms">By continuing, you agree to the StakingForge terms and community rules. After payment, Stripe redirects you to the Discord invite.</p>
+      <button class="join-now checkout-action" id="joinNowButton" type="button">Continue to secure checkout</button>
       <div class="checkout-status" id="checkoutStatus">Connect your live Stripe payment link before going live.</div>
-      <div class="checkout-powered">Powered by secure hosted checkout</div>
+      <div class="checkout-powered">Powered by Stripe hosted checkout</div>
     </div>
   </div>
 </div>
@@ -1420,8 +1417,6 @@ const checkoutClose = document.getElementById('checkoutClose');
 const checkoutTriggers = document.querySelectorAll('.discord-checkout-trigger');
 const checkoutActions = document.querySelectorAll('.checkout-action');
 const checkoutTotal = document.getElementById('checkoutTotal');
-const yearlyLabel = document.getElementById('yearlyLabel');
-const planSwitch = document.getElementById('planSwitch');
 const checkoutStatus = document.getElementById('checkoutStatus');
 const checkoutName = document.getElementById('checkoutName');
 const checkoutEmail = document.getElementById('checkoutEmail');
@@ -1430,19 +1425,12 @@ const onboardEmail = document.getElementById('onboardEmail');
 
 const discordCheckout = {
   monthlyUrl: 'https://buy.stripe.com/test_aFa8wPfooggHg7qckf8N200',
-  yearlyUrl: 'https://buy.stripe.com/test_aFa8wPfooggHg7qckf8N200',
-  monthlyPrice: '$39.00',
-  yearlyPrice: '$337.00',
-  yearlySavings: '$131'
+  monthlyPrice: '$39.00'
 };
 
-let yearlyPlanSelected = false;
-
 const syncCheckoutPlan = () => {
-  if (!checkoutTotal || !yearlyLabel || !planSwitch) return;
-  checkoutTotal.textContent = yearlyPlanSelected ? discordCheckout.yearlyPrice : discordCheckout.monthlyPrice;
-  yearlyLabel.textContent = yearlyPlanSelected ? 'Yearly plan selected' : `Switch to yearly and Save ${discordCheckout.yearlySavings}`;
-  planSwitch.classList.toggle('active', yearlyPlanSelected);
+  if (!checkoutTotal) return;
+  checkoutTotal.innerHTML = `${discordCheckout.monthlyPrice}<span>per month</span>`;
 };
 
 const openCheckout = (event) => {
@@ -1465,7 +1453,7 @@ const closeCheckout = () => {
 };
 
 const continueToHostedCheckout = () => {
-  const targetUrl = yearlyPlanSelected ? discordCheckout.yearlyUrl : discordCheckout.monthlyUrl;
+  const targetUrl = discordCheckout.monthlyUrl;
   if (!targetUrl) {
     checkoutStatus?.classList.add('show');
     return;
@@ -1480,10 +1468,6 @@ checkoutModal?.addEventListener('click', (event) => {
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && checkoutModal?.classList.contains('open')) closeCheckout();
-});
-planSwitch?.addEventListener('click', () => {
-  yearlyPlanSelected = !yearlyPlanSelected;
-  syncCheckoutPlan();
 });
 checkoutActions.forEach(action => action.addEventListener('click', continueToHostedCheckout));
 </script>
