@@ -4,6 +4,19 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>StakingForge — Next-Gen Financial Infrastructure</title>
+<meta name="description" content="StakingForge provides digital asset treasury infrastructure, stablecoin payment workflows, and structured market intelligence for businesses and individual traders."/>
+<link rel="canonical" href="https://staking-forge.vercel.app/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://staking-forge.vercel.app/"/>
+<meta property="og:title" content="StakingForge — Financial Infrastructure for Digital Assets"/>
+<meta property="og:description" content="Infrastructure for businesses. Market insight for traders. Built for payments, treasury operations, onchain research, liquidity analysis, and disciplined market participation."/>
+<meta property="og:image" content="https://staking-forge.vercel.app/stakingforge-logo.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="StakingForge — Financial Infrastructure for Digital Assets"/>
+<meta name="twitter:description" content="Digital asset treasury, stablecoin payment workflows, and structured market intelligence in one ecosystem."/>
+<meta name="twitter:image" content="https://staking-forge.vercel.app/stakingforge-logo.jpg"/>
+<meta name="theme-color" content="#080716"/>
+<link rel="icon" href="./stakingforge-logo.jpg"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 @font-face{font-family:BioSans;font-weight:400;src:url("./stakingforge-live-assets/fonts/biosans-regular.otf") format("opentype");font-display:swap;}
@@ -49,14 +62,14 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 body.light-theme::before{background-image:linear-gradient(rgba(100,80,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(100,80,200,0.04) 1px,transparent 1px);}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 84px;background:rgba(8,7,22,0.84);backdrop-filter:blur(24px);border-bottom:0;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:24px 84px;background:rgba(8,7,22,0.84);backdrop-filter:blur(24px);border-bottom:0;}
 body.light-theme nav{background:rgba(246,243,251,0.84);}
 .logo{display:flex;align-items:center;gap:3px;font-family:BioSans,sans-serif;font-size:29px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-1.2px;}
 body.light-theme .logo{color:#171225;}
 .logo img{width:40px!important;height:40px!important;}
 .logo-icon{width:34px;height:34px;display:flex;align-items:center;justify-content:center;}
 .logo-icon svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
-nav ul{display:flex;list-style:none;gap:35px;margin-left:480px;}
+nav ul{display:flex;list-style:none;gap:35px;margin-left:auto;}
 nav li{position:relative;}
 nav ul a{color:#fff;text-decoration:none;font-size:16px;font-weight:800;transition:color .2s;text-shadow:0 0 12px rgba(255,255,255,0.08);}
 body.light-theme nav ul a{color:#171225;text-shadow:none;}
@@ -72,21 +85,18 @@ body.light-theme nav ul a:hover{color:#6c35ff;}
 .service-menu-item strong{display:block;font-size:15px;line-height:1.2;font-weight:800;margin-bottom:3px;}
 .service-menu-item span{display:block;font-size:14px;line-height:1.35;color:#575163;font-weight:400;}
 .service-menu-item:hover strong{color:#7b3dff;}
-.nav-r{display:flex;align-items:center;gap:16px;}
+.nav-r{display:flex;align-items:center;gap:14px;margin-left:30px;}
 .theme-icons{display:flex;align-items:center;gap:8px;margin-right:6px;}
 .theme-toggle{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:0;cursor:pointer;opacity:.55;transition:opacity .18s,transform .18s;}
 .theme-toggle:hover,.theme-toggle.active{opacity:1;transform:translateY(-1px);}
 .theme-toggle img{width:18px;height:18px;display:block;}
-.btn-nav-in{background:transparent;border:none;color:#fff;font-size:16px;font-weight:800;cursor:pointer;font-family:BioSans,sans-serif;}
-.btn-nav-up{background:transparent;border:2px solid rgba(255,255,255,0.92);color:#fff;padding:11px 27px;border-radius:100px;font-size:16px;font-weight:800;cursor:pointer;font-family:BioSans,sans-serif;transition:border-color .2s,background .2s;}
-body.light-theme .btn-nav-in{color:#171225;}
-body.light-theme .btn-nav-up{color:#171225;border-color:#171225;}
-.btn-nav-up:hover{border-color:var(--accent);}
-.social-link{display:none;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,0.035);transition:border-color .2s,background .2s,transform .2s;}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,0.035);transition:border-color .2s,background .2s,transform .2s;}
 .social-link:hover{border-color:rgba(184,77,255,0.78);background:rgba(184,77,255,0.12);transform:translateY(-1px);}
 .social-link svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .social-link-x svg{fill:currentColor;stroke:none;}
 body.light-theme .social-link{color:#171225;border-color:rgba(23,18,37,0.16);background:rgba(255,255,255,0.62);}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;background:linear-gradient(135deg,#7b3dff,#5b8cff);color:#fff;text-decoration:none;font-size:14px;font-weight:900;letter-spacing:.2px;box-shadow:0 14px 36px rgba(91,140,255,.18);transition:transform .2s,box-shadow .2s,opacity .2s;}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 18px 44px rgba(91,140,255,.26);}
 .mobile-menu-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,0.18);border-radius:999px;background:rgba(255,255,255,0.045);color:#fff;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;}
 .mobile-menu-toggle:hover{border-color:rgba(184,77,255,0.78);background:rgba(184,77,255,0.12);}
 .mobile-menu-toggle span{position:relative;display:block;width:18px;height:2px;border-radius:99px;background:currentColor;transition:background .18s;}
@@ -489,7 +499,7 @@ footer ul a:hover{color:#fff;}
   .theme-toggle{width:34px;height:34px;border:1px solid rgba(255,255,255,0.14);border-radius:999px;background:rgba(255,255,255,0.035);}
   .theme-toggle img{width:16px;height:16px;}
   body.light-theme .theme-toggle{border-color:rgba(23,18,37,0.14);background:rgba(255,255,255,0.62);}
-  .btn-nav-in,.btn-nav-up{display:none;}
+  .nav-cta{display:none;}
   .social-link,.mobile-menu-toggle{display:inline-flex;}
   nav ul{position:absolute;top:72px;left:18px;right:18px;display:flex;flex-direction:column;gap:0;margin-left:0;padding:14px;background:rgba(12,10,28,0.96);border:1px solid rgba(255,255,255,0.12);border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,0.35);backdrop-filter:blur(22px);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;max-height:calc(100dvh - 92px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
   body.light-theme nav ul{background:rgba(255,255,255,0.96);border-color:rgba(23,18,37,0.12);box-shadow:0 24px 70px rgba(74,54,110,0.18);}
@@ -631,8 +641,7 @@ footer ul a:hover{color:#fff;}
     <a class="social-link" href="https://www.instagram.com/stakingforge" target="_blank" rel="noopener" aria-label="Open StakingForge on Instagram">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><path d="M17.4 6.7h.01"/></svg>
     </a>
-    <button class="btn-nav-in">Sign in</button>
-    <button class="btn-nav-up">Sign up</button>
+    <a class="nav-cta discord-checkout-trigger" href="#discord-checkout">Join Discord</a>
     <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false"><span></span></button>
   </div>
 </nav>
@@ -998,7 +1007,7 @@ footer ul a:hover{color:#fff;}
         <li class="ch"><span class="ch-hash">#</span> members-chat</li>
       </ul>
       <div class="disc-price">
-        🔒 Premium access required — <strong>$39/month</strong> or <strong>$337/year</strong> (save 28%)
+        🔒 Premium access required — <strong>€39/month</strong> or <strong>€337/year</strong> (save 28%)
       </div>
     </div>
   </div>
@@ -1091,7 +1100,7 @@ footer ul a:hover{color:#fff;}
     </div>
 
     <div class="contact-panel reveal">
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/stakingforge@gmail.com" method="POST">
+      <form class="contact-form" id="contactForm" action="/api/contact" method="POST">
         <input type="hidden" name="_subject" value="New StakingForge contact request">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
@@ -1254,20 +1263,19 @@ footer ul a:hover{color:#fff;}
     <div>
       <h5>Legal</h5>
       <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Risk Disclosure</a></li>
-        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 StakingForge. All rights reserved.</p>
     <div class="footer-links">
-      <a href="#">Twitter / X</a>
+      <a href="https://x.com/stakingforge" target="_blank" rel="noopener">Twitter / X</a>
       <a href="#discord">Discord</a>
-      <a href="#">Telegram</a>
-      <a href="#">LinkedIn</a>
+      <a href="https://www.instagram.com/stakingforge" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </footer>
@@ -1289,7 +1297,7 @@ footer ul a:hover{color:#fff;}
             <div class="checkout-plan-name">StakingForge Discord</div>
             <div class="checkout-plan-note">Market intelligence and private trader community access.</div>
           </div>
-          <div class="checkout-price" id="checkoutTotal">$39.00<span>per month</span></div>
+          <div class="checkout-price" id="checkoutTotal">€39.00<span>per month</span></div>
         </div>
         <ul class="checkout-includes">
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Daily market updates and technical trade frameworks</li>
@@ -1435,7 +1443,8 @@ contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const formData = new FormData(contactForm);
-  const endpoint = contactForm.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+  const payload = Object.fromEntries(formData.entries());
+  const endpoint = contactForm.action;
 
   submitButton.disabled = true;
   submitButton.textContent = 'Sending...';
@@ -1444,8 +1453,11 @@ contactForm?.addEventListener('submit', async (event) => {
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
-      body: formData,
-      headers: { Accept: 'application/json' }
+      body: JSON.stringify(payload),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
 
     if (!response.ok) throw new Error('Form service unavailable');
@@ -1473,7 +1485,7 @@ const onboardEmail = document.getElementById('onboardEmail');
 
 const discordCheckout = {
   monthlyUrl: 'https://buy.stripe.com/test_aFa28r6HqeyccMp98D1oI00',
-  monthlyPrice: '$39.00'
+  monthlyPrice: '€39.00'
 };
 
 const syncCheckoutPlan = () => {
