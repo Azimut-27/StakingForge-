@@ -71,27 +71,19 @@
     .brand{
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      gap:7px;
       margin-bottom:28px;
       font-family:Syne,Arial,sans-serif;
-      font-size:19px;
+      font-size:22px;
       font-weight:800;
+      letter-spacing:-.4px;
     }
-    .mark{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      background:#050510;
-      position:relative;
+    .brand img{
+      width:40px;
+      height:40px;
+      border-radius:11px;
+      object-fit:cover;
       box-shadow:0 0 22px rgba(123,61,255,.28);
-    }
-    .mark::before{
-      content:"";
-      position:absolute;
-      inset:7px 9px;
-      border-radius:999px;
-      background:linear-gradient(135deg,#00c9a7 0%,#c9ff4d 28%,#7b3dff 56%,#ff4db8 100%);
-      transform:rotate(-38deg);
     }
     .check{
       width:74px;
@@ -206,7 +198,7 @@
   <main class="shell">
     <section class="card" aria-labelledby="successTitle">
       <div class="inner">
-        <div class="brand"><span class="mark" aria-hidden="true"></span>StakingForge</div>
+        <div class="brand"><img src="stakingforge-logo.jpg" alt="StakingForge logo">StakingForge</div>
         <div class="check" aria-hidden="true">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
