@@ -280,7 +280,6 @@ body.light-theme .dat-cta{background:linear-gradient(90deg,rgba(122,60,255,0.08)
 .checkout-includes svg{width:16px;height:16px;flex:0 0 auto;stroke:#00c9a7;stroke-width:3;fill:none;margin-top:1px;}
 .checkout-handoff{border:1px solid #d7e3ff;border-radius:16px;background:linear-gradient(135deg,rgba(91,140,255,.1),rgba(123,61,255,.08));padding:16px;margin:14px 0 16px;color:#344054;font-size:13.5px;line-height:1.55;font-weight:700;}
 .checkout-handoff strong{display:block;color:#10111a;font-size:14px;margin-bottom:4px;}
-.checkout-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
 .checkout-pay-label{text-align:center;font-size:13px;font-weight:800;color:#475467;margin-bottom:10px;}
 .gpay-btn{width:100%;min-height:48px;border-radius:12px;border:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:18px;font-weight:800;cursor:pointer;font-family:var(--pricing-sans,'DM Sans',sans-serif);}
 .gpay-mark{font-weight:900;letter-spacing:-.05em;}
@@ -292,8 +291,6 @@ body.light-theme .dat-cta{background:linear-gradient(90deg,rgba(122,60,255,0.08)
 .radio-dot{width:18px;height:18px;border:2px solid #d0d5dd;border-radius:50%;position:relative;flex:0 0 auto;}
 .radio-dot::after{content:"";position:absolute;inset:4px;border-radius:50%;background:#1683ff;}
 .card-icon{width:18px;height:12px;border-radius:2px;background:linear-gradient(90deg,#0b73ff 0 55%,#d6e8ff 55%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.12);}
-.checkout-input,.checkout-select{width:100%;min-height:48px;border:1px solid #c7d0dd;border-radius:8px;background:#f8fafc;color:#667085;font-family:var(--pricing-sans,'DM Sans',sans-serif);font-size:15px;font-weight:600;padding:0 13px;outline:none;}
-.checkout-input:focus,.checkout-select:focus{border-color:#8b5cf6;background:#fff;box-shadow:0 0 0 4px rgba(124,90,255,.1);}
 .checkout-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
 .checkout-card-note{font-size:13px;line-height:1.5;color:#667085;margin-top:12px;}
 .wallet-row{display:flex;align-items:center;gap:14px;border:1px solid #eaecf0;border-radius:14px;padding:16px;margin:10px 0;color:#667085;font-size:14px;font-weight:800;}
@@ -586,7 +583,6 @@ footer ul a:hover{color:#fff;}
   .checkout-dialog{max-height:94vh;border-radius:18px;}
   .checkout-header,.checkout-body{padding-left:22px;padding-right:22px;}
   .checkout-card-grid{grid-template-columns:1fr;}
-  .checkout-input-grid{grid-template-columns:1fr;}
   .yearly-switch{align-items:flex-start;flex-wrap:wrap;}
   .footer-grid{grid-template-columns:1fr 1fr;}
   footer{padding:48px 24px 28px;}
@@ -1340,10 +1336,6 @@ footer ul a:hover{color:#fff;}
         <strong>Secure payment opens on Stripe.</strong>
         Card details, Link, Apple Pay, and other available payment methods are handled on Stripe's hosted checkout page.
       </div>
-      <div class="checkout-input-grid">
-        <input class="checkout-input" id="checkoutName" type="text" placeholder="Name">
-        <input class="checkout-input" id="checkoutEmail" type="email" placeholder="Email">
-      </div>
       <p class="checkout-terms">By continuing, you agree to the StakingForge terms and community rules. After payment, Stripe redirects you to the StakingForge confirmation page.</p>
       <button class="join-now checkout-action" id="joinNowButton" type="button">Continue to secure checkout</button>
       <div class="checkout-status" id="checkoutStatus">Stripe test checkout is connected for StakingForge Pro.</div>
@@ -1609,10 +1601,6 @@ const checkoutTriggers = document.querySelectorAll('.discord-checkout-trigger');
 const checkoutActions = document.querySelectorAll('.checkout-action');
 const checkoutTotal = document.getElementById('checkoutTotal');
 const checkoutStatus = document.getElementById('checkoutStatus');
-const checkoutName = document.getElementById('checkoutName');
-const checkoutEmail = document.getElementById('checkoutEmail');
-const onboardName = document.getElementById('onboardName');
-const onboardEmail = document.getElementById('onboardEmail');
 
 const discordCheckout = {
   monthlyUrl: 'https://buy.stripe.com/test_aFa28r6HqeyccMp98D1oI00',
@@ -1627,8 +1615,6 @@ const syncCheckoutPlan = () => {
 const openCheckout = (event) => {
   event?.preventDefault();
   if (!checkoutModal) return;
-  if (onboardName?.value && checkoutName) checkoutName.value = onboardName.value;
-  if (onboardEmail?.value && checkoutEmail) checkoutEmail.value = onboardEmail.value;
   checkoutStatus?.classList.remove('show');
   checkoutModal.classList.add('open');
   checkoutModal.setAttribute('aria-hidden', 'false');
