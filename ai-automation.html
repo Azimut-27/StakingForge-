@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI & Automation — StakingForge</title>
+<meta name="description" content="Cut operating costs and boost team productivity with practical AI solutions. Eliminate repetitive work, optimize compute spend, and automate daily business workflows."/>
+<link rel="canonical" href="https://staking-forge.vercel.app/ai-automation.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://staking-forge.vercel.app/ai-automation.html"/>
+<meta property="og:title" content="AI & Automation — StakingForge"/>
+<meta property="og:description" content="Reduce operating costs and boost team productivity with practical AI. Task automation, 24/7 customer assistants, compute cost optimization, and executive advisory."/>
+<meta property="og:image" content="https://staking-forge.vercel.app/stakingforge-logo.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#080716"/>
+<link rel="icon" href="./stakingforge-logo.jpg"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+@font-face{font-family:BioSans;font-weight:400;src:url("./stakingforge-live-assets/fonts/biosans-regular.otf") format("opentype");font-display:swap;}
+@font-face{font-family:BioSans;font-weight:700;src:url("./stakingforge-live-assets/fonts/biosans-bold.otf") format("opentype");font-display:swap;}
+@font-face{font-family:BioSans;font-weight:800;src:url("./stakingforge-live-assets/fonts/biosans-bold.otf") format("opentype");font-display:swap;}
+@font-face{font-family:Termina;font-weight:700;src:url("./stakingforge-live-assets/fonts/termina-bold.otf") format("opentype");font-display:swap;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#080716;
+  --bg2:#0b091b;
+  --bg3:#111029;
+  --card:rgba(14,19,38,0.82);
+  --card-hover:rgba(25,26,55,0.9);
+  --border:rgba(255,255,255,0.105);
+  --border2:rgba(255,255,255,0.2);
+  --text:#f7f5ff;
+  --muted:rgba(255,255,255,0.78);
+  --dim:rgba(255,255,255,0.5);
+  --accent:#b84dff;
+  --accent2:#ec7b9d;
+  --green:#00c9a7;
+  --orange:#ff9f43;
+  --red:#ff6b8a;
+  --blue:#4a7fe0;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:BioSans,sans-serif;overflow-x:hidden;line-height:1.6;font-weight:400;}
+body.light-theme{
+  --bg:#f6f3fb;
+  --bg2:#ffffff;
+  --bg3:#eee8f8;
+  --card:rgba(255,255,255,0.88);
+  --card-hover:#ffffff;
+  --border:rgba(32,24,54,0.12);
+  --border2:rgba(32,24,54,0.2);
+  --text:#171225;
+  --muted:rgba(23,18,37,0.74);
+  --dim:rgba(23,18,37,0.48);
+}
+
+/* GRID BG */
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(100,80,200,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(100,80,200,0.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+body.light-theme::before{background-image:linear-gradient(rgba(100,80,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(100,80,200,0.04) 1px,transparent 1px);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 84px;background:rgba(8,7,22,0.84);backdrop-filter:blur(24px);border-bottom:0;}
+body.light-theme nav{background:rgba(246,243,251,0.84);}
+.logo{display:flex;align-items:center;gap:3px;font-family:BioSans,sans-serif;font-size:29px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-1.2px;}
+body.light-theme .logo{color:#171225;}
+.logo img{width:40px!important;height:40px!important;}
+nav ul{display:flex;list-style:none;gap:35px;margin-left:480px;}
+nav li{position:relative;}
+nav ul a{color:#fff;text-decoration:none;font-size:16px;font-weight:800;transition:color .2s;text-shadow:0 0 12px rgba(255,255,255,0.08);}
+body.light-theme nav ul a{color:#171225;text-shadow:none;}
+nav ul a:hover{color:#fff;}
+body.light-theme nav ul a:hover{color:#6c35ff;}
+.services-menu{position:absolute;top:34px;left:50%;transform:translateX(-50%) translateY(8px);width:650px;padding:30px 28px;background:#f7f5fb;color:#1b1728;border-radius:28px;box-shadow:0 28px 80px rgba(0,0,0,0.28);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;z-index:140;text-shadow:none;}
+.services-menu::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(45deg);width:26px;height:26px;background:#f7f5fb;border-radius:3px;}
+.nav-services.open .services-menu,.nav-services:hover .services-menu,.nav-services:focus-within .services-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.services-menu-label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#2a243d;margin-bottom:18px;font-weight:400;}
+.services-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.services-menu-sublabel{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7b3dff;font-weight:900;margin-bottom:8px;}
+.service-menu-item{display:block;text-decoration:none;color:#1b1728;padding:9px 0;}
+.service-menu-item strong{display:block;font-size:15px;line-height:1.2;font-weight:800;margin-bottom:3px;}
+.service-menu-item span{display:block;font-size:14px;line-height:1.35;color:#575163;font-weight:400;}
+.service-menu-item:hover strong{color:#7b3dff;}
+.nav-r{display:flex;align-items:center;gap:16px;}
+.theme-icons{display:flex;align-items:center;gap:8px;margin-right:6px;}
+.theme-toggle{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:0;cursor:pointer;opacity:.55;transition:opacity .18s,transform .18s;}
+.theme-toggle:hover,.theme-toggle.active{opacity:1;transform:translateY(-1px);}
+.theme-toggle img{width:18px;height:18px;display:block;}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,0.035);transition:border-color .2s,background .2s,transform .2s,box-shadow .2s;}
+.social-link:hover{border-color:rgba(184,77,255,0.78);background:rgba(184,77,255,0.12);transform:translateY(-1px);box-shadow:0 14px 34px rgba(124,90,255,0.16);}
+.social-link svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.social-link-x svg{fill:currentColor;stroke:none;}
+body.light-theme .social-link{color:#171225;border-color:rgba(23,18,37,0.16);background:rgba(255,255,255,0.62);}
+
+/* BUTTONS */
+.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;background:linear-gradient(135deg,rgba(123,61,255,0.96),rgba(91,140,255,0.92));border:1px solid rgba(255,255,255,0.18);color:#fff;padding:16px 28px;border-radius:999px;font-size:15px;font-weight:900;cursor:pointer;font-family:BioSans,sans-serif;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,opacity .22s ease;letter-spacing:0.8px;text-transform:none;text-decoration:none;box-shadow:0 18px 42px rgba(91,140,255,0.18),inset 0 1px 0 rgba(255,255,255,0.18);}
+body.light-theme .hero-cta{color:#fff;border-color:rgba(123,61,255,0.18);box-shadow:0 18px 42px rgba(91,140,255,0.18),inset 0 1px 0 rgba(255,255,255,0.24);}
+.hero-cta:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.32);box-shadow:0 24px 58px rgba(91,140,255,0.28),0 0 0 1px rgba(184,77,255,0.12),inset 0 1px 0 rgba(255,255,255,0.22);opacity:.98;}
+
+/* SECTION HEADERS */
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:block;width:22px;height:2px;background:var(--accent);border-radius:1px;}
+.section-h{font-family:Termina,sans-serif;font-size:clamp(34px,3.5vw,48px);font-weight:700;letter-spacing:-0.5px;line-height:1.1;margin-bottom:14px;}
+.section-p{font-size:18px;color:#fff;line-height:1.6;max-width:620px;margin-bottom:34px;font-weight:900;}
+body.light-theme .section-p{color:#171225;}
+
+/* PAGE HERO */
+.stable-page-hero{position:relative;z-index:1;min-height:720px;padding:170px 84px 80px;display:grid;grid-template-columns:minmax(0,0.98fr) minmax(360px,0.72fr);gap:54px;align-items:center;overflow:hidden;}
+.stable-page-hero::before{content:"";position:absolute;right:-260px;top:40px;width:680px;height:680px;background:radial-gradient(circle,rgba(0,212,170,0.18),transparent 68%);pointer-events:none;}
+.stable-page-hero::after{content:"";position:absolute;left:-260px;bottom:-260px;width:620px;height:620px;background:radial-gradient(circle,rgba(122,60,255,0.14),transparent 68%);pointer-events:none;}
+.stable-page-content{position:relative;z-index:2;max-width:860px;}
+.stable-page-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#00d4aa;font-weight:900;margin-bottom:22px;}
+.stable-page-hero h1{font-family:Termina,sans-serif;font-size:clamp(44px,4.3vw,68px);font-weight:700;line-height:1.06;letter-spacing:0;color:#f4f2ff;margin-bottom:28px;}
+.stable-page-hero p{font-size:21px;line-height:1.52;color:rgba(255,255,255,0.9);font-weight:800;max-width:760px;margin-bottom:38px;}
+.stable-hero-card{position:relative;z-index:2;border:1px solid rgba(255,255,255,0.12);border-radius:28px;padding:30px;background:linear-gradient(180deg,rgba(18,17,42,0.94),rgba(9,8,24,0.92));box-shadow:0 30px 90px rgba(0,0,0,0.26);}
+.stable-hero-card h2{font-size:18px;font-weight:900;margin-bottom:18px;color:var(--text);}
+.stable-hero-list{display:grid;gap:14px;}
+.stable-hero-list li{list-style:none;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;color:var(--muted);font-size:14px;line-height:1.55;font-weight:700;}
+.stable-hero-list li::before{content:attr(data-step);width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,170,0.12);color:#00d4aa;font-size:12px;font-weight:900;}
+
+/* SECTIONS */
+.stable-section{position:relative;z-index:1;padding:92px 84px;background:var(--bg2);}
+.stable-section.alt{background:var(--bg);}
+.stable-wrap{max-width:1180px;margin:0 auto;}
+.stable-head{max-width:780px;margin-bottom:30px;}
+.stable-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.stable-card{border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:24px;background:rgba(255,255,255,0.045);min-height:260px;}
+.stable-icon{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,rgba(0,212,170,0.24),rgba(122,60,255,0.18));color:#fff;font-size:13px;font-weight:900;}
+.stable-card h3{font-size:21px;font-weight:900;color:var(--text);margin-bottom:12px;}
+.stable-card p{font-size:15px;line-height:1.68;color:var(--muted);font-weight:700;}
+
+/* FLOW STEPS */
+.stable-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stable-flow-step{border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:22px;background:rgba(255,255,255,0.045);}
+.stable-flow-step span{display:flex;width:42px;height:42px;border-radius:14px;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,rgba(0,212,170,0.24),rgba(122,60,255,0.18));color:#fff;font-weight:900;}
+.stable-flow-step h3{font-size:18px;font-weight:900;margin-bottom:8px;color:var(--text);}
+.stable-flow-step p{font-size:14px;line-height:1.6;color:var(--muted);font-weight:700;}
+
+/* DELIVERABLES / IMPACT */
+.stable-risk{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stable-risk-box{border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:28px;background:rgba(255,255,255,0.045);}
+.stable-risk-box h3{font-size:22px;font-weight:900;margin-bottom:14px;color:var(--text);}
+.stable-risk-box ul{display:grid;gap:12px;}
+.stable-risk-box li{list-style:none;color:var(--muted);font-size:15px;line-height:1.55;font-weight:800;position:relative;padding-left:24px;}
+.stable-risk-box li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:#00d4aa;box-shadow:0 0 18px rgba(0,212,170,0.55);}
+
+/* FINAL CTA */
+.stable-final-cta{position:relative;z-index:1;padding:92px 84px;background:linear-gradient(90deg,rgba(0,212,170,0.12),rgba(122,60,255,0.1));}
+.stable-final-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:26px;align-items:center;}
+.stable-final-inner p{font-size:17px;line-height:1.58;color:var(--muted);font-weight:800;max-width:650px;}
+.stable-final-inner .hero-cta{text-decoration:none;white-space:nowrap;}
+
+/* LIGHT THEME OVERRIDES */
+body.light-theme .stable-page-hero h1{color:#171225;}
+body.light-theme .stable-page-hero p{color:rgba(23,18,37,0.84);}
+body.light-theme .stable-hero-card,body.light-theme .stable-card,body.light-theme .stable-flow-step,body.light-theme .stable-risk-box{background:#fff;border-color:rgba(61,45,96,0.1);box-shadow:0 18px 50px rgba(61,45,96,0.08);}
+body.light-theme .stable-hero-card h2,body.light-theme .stable-card h3,body.light-theme .stable-flow-step h3,body.light-theme .stable-risk-box h3{color:#171225;}
+body.light-theme .stable-hero-list li,body.light-theme .stable-card p,body.light-theme .stable-flow-step p,body.light-theme .stable-risk-box li,body.light-theme .stable-final-inner p{color:rgba(23,18,37,0.68);}
+body.light-theme .stable-section{background:#fff;}
+body.light-theme .stable-section.alt{background:#f6f3fb;}
+
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* FOOTER */
+footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid var(--border);padding:64px 60px 36px;}
+body.light-theme footer ul a,body.light-theme footer h5,body.light-theme .footer-bottom p{color:#171225;}
+body.light-theme .footer-brand p,body.light-theme .footer-disclaimer,body.light-theme .footer-links a{color:rgba(23,18,37,0.68);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-brand p{font-size:13.5px;color:var(--muted);margin-top:16px;max-width:250px;line-height:1.75;}
+.footer-disclaimer{font-size:12px;color:var(--dim);margin-top:12px;line-height:1.6;max-width:250px;}
+footer h5{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:18px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+footer ul a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
+footer ul a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:12.5px;color:var(--dim);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:12.5px;color:var(--dim);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--muted);}
+
+@media(max-width:900px){
+  nav{padding:14px 24px;}
+  nav ul{display:none;}
+  .stable-page-hero{grid-template-columns:1fr;padding:120px 24px 70px;}
+  .stable-section,.stable-final-cta{padding:70px 24px;}
+  .stable-grid,.stable-flow,.stable-risk{grid-template-columns:1fr;}
+  .stable-final-inner{flex-direction:column;align-items:flex-start;}
+  .stable-page-hero h1{font-size:40px;}
+  .services-menu{width:min(650px,calc(100vw - 32px));}
+  .services-menu-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  footer{padding:48px 24px 28px;}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="stakingforge.html" class="logo">
+    <img src="./stakingforge-logo.jpg" style="width:34px;height:34px;border-radius:8px;object-fit:cover;" alt="StakingForge Logo"/>
+    StakingForge
+  </a>
+  <ul>
+    <li class="nav-services">
+      <a href="stakingforge.html#services" id="servicesNavTrigger" aria-expanded="false">Services</a>
+      <div class="services-menu" id="servicesMenu" role="menu" aria-label="Services we offer">
+        <div class="services-menu-label">Services We Offer</div>
+        <div class="services-menu-grid">
+          <div class="services-menu-group">
+            <div class="services-menu-sublabel">For Businesses</div>
+            <a class="service-menu-item" href="payments.html" role="menuitem"><strong>Payment Infrastructure</strong><span>Accept and optimize fiat and crypto payments</span></a>
+            <a class="service-menu-item" href="stablecoin-integration.html" role="menuitem"><strong>Stablecoin Integration</strong><span>Deploy idle treasury capital into structured onchain yield strategies</span></a>
+            <a class="service-menu-item" href="digital-asset-services.html" role="menuitem"><strong>Digital Asset Treasury</strong><span>Diversify balance sheet reserves into productive digital assets.</span></a>
+            <a class="service-menu-item" href="ai-automation.html" role="menuitem"><strong>AI & Automation</strong><span>Reduce operating costs and boost team productivity with practical AI</span></a>
+          </div>
+          <div class="services-menu-group">
+            <div class="services-menu-sublabel">For Individuals</div>
+            <a class="service-menu-item" href="market-updates.html" role="menuitem"><strong>Market Updates</strong><span>Macro overview, market sentiment, and crypto market analysis.</span></a>
+            <a class="service-menu-item" href="onchain-research.html" role="menuitem"><strong>Onchain Research</strong><span>Smart money flows, whale tracking, and DeFi market overview.</span></a>
+            <a class="service-menu-item" href="liquidity-hunting.html" role="menuitem"><strong>Liquidity Hunting</strong><span>Liquidation maps, leverage positioning, and orderflow analytics.</span></a>
+            <a class="service-menu-item" href="technical-analysis.html" role="menuitem"><strong>Technical Analysis</strong><span>Structured trade setups and risk management frameworks.</span></a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li><a href="stakingforge.html#faq">FAQ</a></li>
+    <li><a href="stakingforge.html#pricing">Pricing</a></li>
+    <li><a href="stakingforge.html#contact">Contact Us</a></li>
+    <li><a href="stakingforge.html#referral">About Us</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="theme-icons">
+      <button class="theme-toggle active" id="darkThemeToggle" type="button" aria-label="Switch to dark theme">
+        <img src="./stakingforge-live-assets/dark-theme-dark.svg" alt=""/>
+      </button>
+      <button class="theme-toggle" id="lightThemeToggle" type="button" aria-label="Switch to light theme">
+        <img src="./stakingforge-live-assets/light-theme-dark.svg" alt=""/>
+      </button>
+    </div>
+    <a class="social-link social-link-x" href="https://x.com/stakingforge" target="_blank" rel="noopener" aria-label="Open StakingForge on X">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2h3.1l-6.8 7.8 8 12.2h-6.3l-4.9-7.3-5.6 7.3H3.3l7.3-8.5L3 2h6.4l4.4 6.7L18.9 2Zm-1.1 17.9h1.7L8.5 4H6.6l11.2 15.9Z"/></svg>
+    </a>
+    <a class="social-link" href="https://www.instagram.com/stakingforge" target="_blank" rel="noopener" aria-label="Open StakingForge on Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><path d="M17.4 6.7h.01"/></svg>
+    </a>
+  </div>
+</nav>
+
+<section class="stable-page-hero">
+  <div class="stable-page-content reveal">
+    <div class="stable-page-eyebrow">AI & Automation</div>
+    <h1>Cut operating costs and multiply team output with practical AI.</h1>
+    <p>We help growing companies eliminate repetitive manual work, streamline daily operations, and reduce software and compute expenses &mdash; with simple, plug-and-play AI tools that do not disrupt your business.</p>
+    <a class="hero-cta" href="stakingforge.html#contact">Book an AI Strategy Call &rarr;</a>
+  </div>
+  <aside class="stable-hero-card reveal">
+    <h2>What You Achieve</h2>
+    <ul class="stable-hero-list">
+      <li data-step="01">Save 10–20+ hours per week on manual data entry, customer replies, and paperwork.</li>
+      <li data-step="02">Cut software & compute bills by 30%+ by replacing bloated SaaS tools with lean models.</li>
+      <li data-step="03">24/7 automated responsiveness for customer inquiries and lead capture.</li>
+      <li data-step="04">Zero technical headache: We audit, set up, and train your team end-to-end.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="stable-section">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
+      <div class="section-label">Service Offering</div>
+      <h2 class="section-h">Practical AI solutions built for real business efficiency.</h2>
+      <p class="section-p">We focus on high-ROI, tangible tools that save your team hours from day one without requiring complex technical overhauls.</p>
+    </div>
+    <div class="stable-grid reveal">
+      <article class="stable-card">
+        <div class="stable-icon">01</div>
+        <h3>Daily Task & Workflow Automation</h3>
+        <p>Put repetitive busywork on autopilot. Automate invoice data entry, document summaries, report generation, and data transfers between your CRM, email, and accounting tools without human error.</p>
+      </article>
+      <article class="stable-card">
+        <div class="stable-icon">02</div>
+        <h3>24/7 Smart Customer & Lead Assistants</h3>
+        <p>Capture, qualify, and convert leads while you sleep. Custom AI assistants trained specifically on your company FAQs, product docs, and service offerings that answer questions and book appointments directly.</p>
+      </article>
+      <article class="stable-card">
+        <div class="stable-icon">03</div>
+        <h3>Compute & Software Cost Optimization</h3>
+        <p>Slash your AI, cloud, and subscription spend. We audit your existing software stack, eliminating redundant SaaS tools and routing LLM workloads to 2x faster, 30% cheaper compute architectures.</p>
+      </article>
+      <article class="stable-card">
+        <div class="stable-icon">04</div>
+        <h3>Strategic AI Advisory & Team Onboarding</h3>
+        <p>Clear, hype-free guidance on where AI actually delivers ROI. We audit internal bottlenecks, develop your tailored 90-day AI roadmap, and train your staff so everyone uses the tools with confidence.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stable-section alt">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-h">A simple, risk-free path to automated operations.</h2>
+    </div>
+    <div class="stable-flow reveal">
+      <div class="stable-flow-step"><span>01</span><h3>Operational Audit</h3><p>We review where your team loses the most hours and identify the fastest, highest-ROI automation opportunities.</p></div>
+      <div class="stable-flow-step"><span>02</span><h3>Solution Design</h3><p>We select the right tools and build working prototypes that connect directly to your existing apps and workflows.</p></div>
+      <div class="stable-flow-step"><span>03</span><h3>Rollout & Training</h3><p>We deploy the automations with zero downtime and conduct hands-on training sessions with your team.</p></div>
+      <div class="stable-flow-step"><span>04</span><h3>Measure & Scale</h3><p>We track hard metrics (hours saved, costs reduced) and continuously fine-tune the system for maximum accuracy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stable-section">
+  <div class="stable-wrap">
+    <div class="stable-head reveal">
+      <div class="section-label">Measurable Impact</div>
+      <h2 class="section-h">Tangible outcomes you can see on your bottom line.</h2>
+    </div>
+    <div class="stable-risk reveal">
+      <div class="stable-risk-box">
+        <h3>Cost Reductions</h3>
+        <ul>
+          <li>Reduced software subscription overhead and seat licenses</li>
+          <li>30–50% cheaper compute and model inference routing</li>
+          <li>Less overtime on manual administrative data work</li>
+          <li>Clear ROI and cost tracking report</li>
+        </ul>
+      </div>
+      <div class="stable-risk-box">
+        <h3>Productivity Gains</h3>
+        <ul>
+          <li>Instant document, receipt, and invoice processing</li>
+          <li>24/7 instant lead qualification & automated calendar booking</li>
+          <li>Faster project turnaround times and error-free execution</li>
+          <li>Reusable AI prompt libraries & team operational playbooks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stable-final-cta">
+  <div class="stable-final-inner reveal">
+    <div>
+      <div class="section-label">Ready to work smarter?</div>
+      <h2 class="section-h">Stop burning hours on tasks AI can handle in seconds.</h2>
+      <p>Tell us about your biggest operational bottleneck. We will show you a practical AI blueprint to fix it on our first call.</p>
+    </div>
+    <a class="hero-cta" href="stakingforge.html#contact">Schedule a Free AI Audit &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="stakingforge.html" class="logo" style="text-decoration:none;">
+        <img src="./stakingforge-logo.jpg" style="width:34px;height:34px;border-radius:8px;object-fit:cover;" alt="StakingForge Logo"/>
+        StakingForge
+      </a>
+      <p>Next-generation financial infrastructure for businesses and traders navigating the digital economy.</p>
+      <p class="footer-disclaimer">Trading involves substantial risk. Past performance is not indicative of future results. Not financial advice.</p>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li><a href="payments.html">Payment Infrastructure</a></li>
+        <li><a href="stablecoin-integration.html">Stablecoin Integration</a></li>
+        <li><a href="digital-asset-services.html">Digital Asset Treasury</a></li>
+        <li><a href="ai-automation.html">AI & Automation</a></li>
+        <li><a href="market-updates.html">Market Updates</a></li>
+        <li><a href="onchain-research.html">Onchain Research</a></li>
+        <li><a href="liquidity-hunting.html">Liquidity Hunting</a></li>
+        <li><a href="technical-analysis.html">Technical Analysis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="stakingforge.html#referral">About Us</a></li>
+        <li><a href="stakingforge.html#pricing">Pricing</a></li>
+        <li><a href="stakingforge.html#faq">FAQ</a></li>
+        <li><a href="stakingforge.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 StakingForge. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://x.com/stakingforge" target="_blank" rel="noopener">Twitter / X</a>
+      <a href="https://discord.gg/stakingforge" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.instagram.com/stakingforge" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+const darkThemeToggle = document.getElementById('darkThemeToggle');
+const lightThemeToggle = document.getElementById('lightThemeToggle');
+
+const setTheme = (theme) => {
+  const isLight = theme === 'light';
+  document.body.classList.toggle('light-theme', isLight);
+  darkThemeToggle?.classList.toggle('active', !isLight);
+  lightThemeToggle?.classList.toggle('active', isLight);
+  if (darkThemeToggle && lightThemeToggle) {
+    darkThemeToggle.querySelector('img').src = isLight ? './stakingforge-live-assets/dark-theme-light.svg' : './stakingforge-live-assets/dark-theme-dark.svg';
+    lightThemeToggle.querySelector('img').src = isLight ? './stakingforge-live-assets/light-theme-light.svg' : './stakingforge-live-assets/light-theme-dark.svg';
+  }
+  localStorage.setItem('stakingforge-theme', theme);
+};
+
+setTheme(localStorage.getItem('stakingforge-theme') || 'dark');
+darkThemeToggle?.addEventListener('click', () => setTheme('dark'));
+lightThemeToggle?.addEventListener('click', () => setTheme('light'));
+
+const servicesNav = document.querySelector('.nav-services');
+const servicesTrigger = document.getElementById('servicesNavTrigger');
+const servicesMenu = document.getElementById('servicesMenu');
+
+if (servicesNav && servicesTrigger && servicesMenu) {
+  const closeServicesMenu = () => {
+    servicesNav.classList.remove('open');
+    servicesTrigger.setAttribute('aria-expanded', 'false');
+  };
+
+  servicesTrigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    const isOpen = servicesNav.classList.toggle('open');
+    servicesTrigger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  servicesMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeServicesMenu);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!servicesNav.contains(event.target)) closeServicesMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeServicesMenu();
+  });
+}
+</script>
+</body>
+</html>
